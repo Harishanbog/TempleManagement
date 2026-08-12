@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+<title>Document</title>
+</head>
+<body class="p-5" style="color: rgb(1,1,1);">
+    {% if object_list is none %}
+    <H1>NO data</H1>
+    {% endif%}
+    <h1 style="text-align:center">Sri Harihareshwara Temple</h1>
+    <a href="/detail/{{maasa}}" class="btn btn-danger">Back</a>
+    <h1 style="text-align:center" class="font-weight-bold">{{maasa}} ಮಾಸ</h1>
+    <table class="table table-bordered">
+        <tr class="font-weight-bold">
+            <th>Sl No</th>
+            <th>Recipt number</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Pincode</th>
+            <th>Phone</th>
+            <th>ಮಾಸ</th>
+            <th>ಪಕ್ಷ</th>
+            <th>ತಿಥಿ</th>
+            <th>Pooja Day</th>
+        </tr>
+        <tr>
+            <h1 style="text-align: center;" class="bg-info text-white">HINDU</h1>
+        </tr>
+        {% for object in object_list %}
+        <tr>
+            <th>{{forloop.counter}}</th>
+            <th>{{object.receipt_number}}</th>
+            <th>{{object.name}}</th>
+            <th>{{object.address}}</th>
+            <th>{{object.pincode}}</th>
+            <th>{{object.phone}}</th>
+            <th>{{object.thithi.maasa}}</th>
+            <th>{{object.thithi.paksha}}</th>
+            <th>{{object.thithi.thithi}}</th>
+            <th>{{object.thithi.pooja_day}}</th>
+        </tr>
+        {%endfor%}
+    </table>
+    <table class="table table-hover">
+        <tr class="font-weight-bold">
+            <th>Sl No</th>
+            <th>Recipt number</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Pincode</th>
+            <th>Phone</th>
+            <th>Date and month</th>
+        </tr>
+        <tr>
+            <h1 style="text-align: center;" class="bg-info text-white">Date Wise</h1>
+        </tr>
+        {% for object in object_list1 %}
+        <tr>
+            <th>{{forloop.counter}}</th>
+            <th>{{object.receipt_number}}</th>
+            <th>{{object.name}}</th>
+            <th>{{object.address}}</th>
+            <th>{{object.pincode}}</th>
+            <th>{{object.phone}}</th>
+            <th>{{object.date}} {{object.month}}</th>
+        </tr>
+        {%endfor%}
+    </table>
+
+
+</body>
+</html>
