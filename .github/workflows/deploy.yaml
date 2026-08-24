@@ -20,6 +20,6 @@ jobs:
           username: azureuser
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd /home/azureuser/TempleMangement
+            cd /home/azureuser/TempleManagement
             git pull
             docker compose up -d --build
