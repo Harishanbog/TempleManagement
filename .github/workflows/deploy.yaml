@@ -20,6 +20,6 @@ jobs:
           username: azureuser
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd /home/azureuser
-            git clone ${{ secrets.GIT_REPO }}
+            cd /home/azureuser/TempleMangement
+            git pull
             docker compose up -d --build
