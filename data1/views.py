@@ -82,6 +82,7 @@ def info(request,slug):
             'maasa':slug,
         }) 
 
+#checking
 def detail(request,slug):
     if request.method=='POST':
         thithi1=request.POST.get('ma')
