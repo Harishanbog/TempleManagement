@@ -3,7 +3,7 @@ from email.policy import default
 from pickletools import decimalnl_long
 from pyexpat import model
 from statistics import mode
-from tkinter import CASCADE
+# from tkinter import CASCADE
 from django.db import models
 from django.utils.dates import MONTHS
 from django.shortcuts import redirect,reverse
